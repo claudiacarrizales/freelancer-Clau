@@ -1,0 +1,428 @@
+@charset "utf-8";
+/*======================================
+
+ [ -Main Stylesheet-
+  Theme: Montage Preview 
+  Version: 1.0
+  Last change: 17/01/2015 ]
+ 
+*/
+
+/*-------------Import fonts ---------------------------------------*/
+@font-face {
+	font-family:'FuturaPT-Book';
+	src: url('../fonts/FuturaPT-Book_gdi.eot');
+	src: url('../fonts/FuturaPT-Book_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/FuturaPT-Book_gdi.woff') format('woff'),
+		url('../fonts/FuturaPT-Book_gdi.ttf') format('truetype'),
+		url('../fonts/FuturaPT-Book_gdi.svg#FuturaPT-Book') format('svg');
+}
+@font-face {
+	font-family:'futurastd-bold';
+	src: url('../fonts/futurastd-bold.eot');
+	src: url('../fonts/futurastd-bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/futurastd-bold.woff') format('woff'),
+		url('../fonts/futurastd-bold.ttf') format('truetype'),
+		url('../fonts/futurastd-bold.svg#FuturaPT-Book') format('svg');
+}
+/*-------------General Style---------------------------------------*/
+html{
+	overflow-x:hidden !important;
+	height:100%;
+}
+body{
+	background-color: lightblue;
+	margin: 0;
+	padding: 0;
+	font-family: 'FuturaPT-Book';
+	font-size: 12px;
+	color: #000;
+	background:#f4f4f4;
+	height:100%;
+	text-align:center;
+}
+@-o-viewport {width: device-width;}
+@-ms-viewport {width: device-width;}
+@viewport {width: device-width;}
+ 
+/*--------------Typography--------------------------------------*/
+ 
+h2 {
+	font-size: 2.2em;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+h3 {
+	font-size: 1.2em;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+ 
+
+/* ---------Content Styles--------------------------------------*/
+.loader {
+	position:fixed;
+	top:50% !important;
+	left:50%;
+	width:50px;
+	height:50px;
+	z-index:100;
+	margin-left:-25px;
+}
+.tm-loader,
+.tm-loader #circle{
+	width: 50px;
+	height: 50px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background: none;
+	-webkit-transform-origin: center center;
+	    -ms-transform-origin: center center;
+	    	transform-origin: center center;
+}
+.tm-loader {
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-animation:preloader-outer 1.5s ease infinite;
+	   -moz-animation:preloader-outer 1.5s ease infinite;
+	     -o-animation:preloader-outer 1.5s ease infinite;
+	        animation:preloader-outer 1.5s ease infinite;
+}
+.tm-loader #circle{
+	-webkit-animation:preloader 3s ease infinite;
+	   -moz-animation:preloader 3s ease infinite;
+	     -o-animation:preloader 3s ease infinite;
+	        animation:preloader 3s ease infinite;
+}
+.tm-loader #circle{
+	border: 2px solid  #ccc;
+}
+.tm-loader #circle   {
+	border-bottom: 2px solid #000;
+}
+
+@-webkit-keyframes preloader-outer{
+	from { opacity: 1;	-webkit-transform: rotate( 0deg ); }
+	to	 { opacity: 1;	-webkit-transform: rotate( 360deg ); }
+}
+@keyframes preloader-outer{
+	from { opacity: 1;	transform: rotate( 0deg ); }
+	to	 { opacity: 1;	transform: rotate( 360deg ); }
+}
+@-webkit-keyframes preloader{
+	0% { opacity: 0.3; }
+	50%	 { opacity: 1; }
+	100% { opacity: 0.3; }
+}
+@keyframes preloader{
+	0% { opacity: 0.3; }
+	50%	 { opacity: 1; }
+	100% { opacity: 0.3; }
+}
+#main{
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0;
+	z-index:2;
+}
+#wrapper{
+	height:100%; 
+	margin-left:0;
+	vertical-align:top; 
+	position: absolute; 
+	left:0; 
+	top:0; 
+	right:0;
+	z-index:2;
+ 
+}
+.content-holder{
+	vertical-align: top;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	height: 100%;
+}
+.container{
+	max-width: 900px;
+	width:100%;
+	margin:0 auto;
+	position: relative; 
+	z-index:2;
+}
+.content {
+	float:left;
+	width:100%;
+	position:relative;
+	z-index:2;
+ 
+}
+.full-height {
+	height:100%;
+} 
+.preview-title {
+	position:absolute;
+	top:20%;
+	left:10%;
+	text-align:left;
+	z-index:100;
+}
+.preview-title h3 {
+	margin-top:10px;
+}
+.preview-title h4 {
+	font-family:'futurastd-bold';
+	text-transform:uppercase;
+	margin-top:50px;
+	font-size: 18px;
+	}
+.iframe-holder {
+	position:relative;
+	float:right;
+	right:5%;
+	top:10%;
+	width:80%;
+	height:80%;
+	visibility: visible;
+	-webkit-transform:scale(0.65);
+	-moz-transform: scale(0.65);
+	-o-transform: scale(0.65);
+	-ms-transform:  scale(0.65);
+	transform:  scale(0.65);
+	border:50px solid #fff;
+}
+.iframe-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:2;
+	background:#fff;
+	opacity:0.3;
+}
+.iframe-holder  iframe{
+	width:100%;
+	height:100%;
+	position:relative;
+	z-index:1;
+}
+.swiper-nav-holder {
+	position: absolute;
+	left:10%;
+	top:80%;
+	width: 100px;
+	height: 40px;
+	margin-top:80px;
+	line-height: 36px;
+}
+.swiper-nav  {
+	display:inline-block;
+	width: 40px;
+	height: 40px;
+	color:#fff;
+	position:relative;
+	z-index: 14;
+	font-size:8px;
+	background:#000;
+}
+.swiper-nav:hover {
+	background:#fff;
+}
+.slide-title-holder {
+	position:absolute;
+	top:30%;
+	width:100%;
+	z-index:10;
+}
+.slide-title {
+	max-width:800px;
+	margin:-20px auto;
+}
+.slide-title h3{
+	position:relative;
+	opacity:0;
+	top:50px;
+	float:right;
+}
+.swiper-slide-active   .slide-title h3{
+	opacity:1;
+	top:0;
+	-webkit-transition: 1s 0.5s;
+	transition: 1s 0.5s;
+}
+.slide-title h3 {
+	padding:6px 10px 6px 0;
+	margin-top:-70px;
+	font-family:'futurastd-bold';
+	text-transform:uppercase; 
+	font-size: 32px;
+	letter-spacing:2px;
+	position:relative;
+	display:inline-table;
+	text-shadow: -50px 41px 2px rgba(150, 150, 150, 0.32);
+}
+.slide-title h3 span {
+	float:left;
+	width:100%;
+}
+.slide-title h3:before  {
+	 content:'';
+	 position:absolute;
+	 bottom:-5px;
+	 background:#000;
+	 width:0;
+	 height:6px;
+	 left:0;
+	-webkit-transition: 1s 1.3s;
+	transition: 1s 1.3s;
+}
+ 
+ 
+.swiper-slide-active   .slide-title h3:before   {
+	width:100%;	
+}
+ 
+.slide-title a { 
+	color:#000;
+}
+
+.swiper-container  , #horizontal-gallery {
+	float:left;
+	width: 100%;
+	height: 100%;
+}
+.slides-counter {
+	position:absolute;
+	bottom:60px;
+	right:80px;
+	z-index:20;
+}
+.slides-counter li {
+	display:inline-block;
+	font-size:34px;
+	position:relative;
+	font-weight: 100;
+	text-transform:uppercase;
+	margin-left:20px;
+	width:30px;
+	height:30px;
+}
+.slides-counter li:last-child:before {
+	content:'/';
+	font-size:25px;
+	position:absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	right:100%;
+	margin-right:6px;
+	top:10px;
+}
+.presSlidesFrom {
+	position:relative;
+	top:-10px;
+}
+.presSlidesActive {
+	color:#666;
+	font-size:54px;
+}
+.slides-counter.black-colr    {
+	width:140px;
+	height:40px;
+	font-size:14px;
+}
+.slides-counter.black-colr li {
+	font-size:16px;
+	color:#000  !important;
+	margin-left:10px;
+}
+.slides-counter.black-colr li:last-child:before {
+	font-size:15px;
+	color:#000  !important;
+	position:absolute;
+	margin-right:8px;
+	top:0;
+}
+.slides-counter.black-colr .presSlidesFrom {
+	position:relative;
+	top:-4px;
+}
+.slides-counter.black-colr .presSlidesActive {
+	color:#000;
+	font-size:24px;
+}
+.body-bg {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+	opacity:0.2;
+ 
+}
+.bg {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-size: cover;
+	background-attachment: scroll  ;
+	background-position: center  ;
+	background-repeat:repeat;
+	background-origin: content-box;
+}
+/*------ css-animation - ------------------------------------------------*/
+.transition{
+	-webkit-transition: all 500ms linear;
+    -moz-transition: all 500ms linear;
+    -o-transition: all 500ms linear;
+    -ms-transition: all 500ms linear;
+    transition: all 500ms linear;
+}
+ 
+/*------  Responsive ------------------------------------------------------*/
+@media only screen and  (max-width: 736px) {
+.preview-title {
+ 
+	top:10%;
+ 
+}
+.swiper-nav-holder {
+	left:10%;
+	top:90%;
+
+	margin-top:0;
+	margin-left:0;
+
+}
+.slide-title-holder {
+ 
+	top:60%;
+ 
+}
+.slide-title h3{
+	float: none;
+}
+.slide-title h3 {
+	margin-top:20px;
+	font-size: 22px;
+	text-shadow: none;
+}
+.slide-title h3:before {
+	display:none;
+}
+.slide-title h3 a {
+	color:#000;
+}
+}

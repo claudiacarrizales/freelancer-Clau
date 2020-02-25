@@ -1,0 +1,35 @@
+.contenedor{
+	border-radius: 0%;
+    width: 800px;
+    margin: auto;
+    border: black 2px solid;
+    background-color: lightyellow;
+    text-align: justify;
+}
+
+body{
+	background-color: pink;
+}
+
+h1{
+	text-align: center;
+	color: red;
+}
+
+.aboutme{
+	border-radius: 0%;
+    width: 800px;
+    margin: auto;
+    border: black 2px solid;
+    background-color: lightblue;
+    text-align: justify;
+}
+
+.trabajo{
+	border-radius: 0%;
+    width: 800px;
+    margin: auto;
+    border: black 2px solid;
+    background-color: lightgrey;
+    text-align: justify;
+}
